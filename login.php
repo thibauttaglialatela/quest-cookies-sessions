@@ -1,4 +1,10 @@
 <?php require 'inc/head.php'; ?>
+<?php 
+    if(!empty($_POST)) {
+    $_SESSION['name'] = $_POST['loginname'];
+    header('Location:index.php');
+    exit();
+    }?>
 <div class="container" style="margin-top:40px">
     <div class="row">
         <div class="col-sm-6 col-md-4 col-md-offset-4">
@@ -30,6 +36,7 @@
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign in">
                                     </div>
+                                    
                                 </div>
                             </div>
                         </fieldset>
@@ -41,5 +48,5 @@
             </div>
         </div>
     </div>
-</div>
+</div> 
 <?php require 'inc/foot.php'; ?>

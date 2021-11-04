@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,6 +38,7 @@
                     <li><a href="#">Chocolates chips</a></li>
                     <li><a href="#">Nuts</a></li>
                     <li><a href="#">Gluten full</a></li>
+                    <li><a href="logout.php">Logout</a></li>
                     <li>
                         <a href="/cart.php" class="btn btn-warning navbar-btn">
                             <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
@@ -48,6 +50,11 @@
         </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid text-right">
-        <strong>Hello Wilder !</strong>
+        <?php if(!empty($_SESSION)): ?>
+        <strong>Hello <?=$_SESSION['name']?></strong>
+        <?php else: ?>
+        <strong>Hello Wilder !</strong>    
+        <?php endif; ?>
+        
     </div>
 </header>
